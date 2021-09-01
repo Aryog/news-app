@@ -4,7 +4,7 @@ import Navbar from "./components/Navbar";
 import News from "./components/News";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import LoadingBar from 'react-top-loading-bar'
-
+// react is awesome for learning
 export default class App extends Component {
   country = "au";
   pageSize = 5;

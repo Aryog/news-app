@@ -41,9 +41,11 @@ export class News extends Component {
     });
     this.props.setProgress(100);
   }
-  
+
   async componentDidMount() {
-    document.title = `Peigon News | ${this.capitalizeFirstLetter(this.props.category)}`;
+    document.title = `Peigon News | ${this.capitalizeFirstLetter(
+      this.props.category
+    )}`;
     this.updateNews();
   }
 
@@ -78,31 +80,31 @@ export class News extends Component {
           hasMore={this.state.totalResults !== this.state.articles.length}
           loader={<Spinner />}
         >
-        <div className="container">
-          <div className="row">
-            {this.state.loading && <Spinner />}
-            {this.state.articles.map((element) => {
-              return (
-                <div className="col-md-4 my-3" key={element.urlToImage}>
-                  <Newsitem
-                    title={element.title ? element.title : "..."}
-                    description={
-                      element.description ? element.description : "..."
-                    }
-                    ImageUrl={
-                      element.urlToImage
-                        ? element.urlToImage
-                        : "https://upload.wikimedia.org/wikipedia/commons/e/ec/RandomBitmap.png"
-                    }
-                    newsUrl={element.url ? element.url : ""}
-                    author={element.author}
-                    date={element.publishedAt}
-                    source={element.source.name}
-                  />
-                </div>
-              );
-            })}
-          </div>
+          <div className="container">
+            <div className="row">
+              {this.state.loading && <Spinner />}
+              {this.state.articles.map((element) => {
+                return (
+                  <div className="col-md-4 my-3" key={element.urlToImage}>
+                    <Newsitem
+                      title={element.title ? element.title : "..."}
+                      description={
+                        element.description ? element.description : "..."
+                      }
+                      ImageUrl={
+                        element.urlToImage
+                          ? element.urlToImage
+                          : "https://upload.wikimedia.org/wikipedia/commons/e/ec/RandomBitmap.png"
+                      }
+                      newsUrl={element.url ? element.url : ""}
+                      author={element.author}
+                      date={element.publishedAt}
+                      source={element.source.name}
+                    />
+                  </div>
+                );
+              })}
+            </div>
           </div>
         </InfiniteScroll>
 
