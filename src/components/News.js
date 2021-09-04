@@ -65,22 +65,24 @@ export class News extends Component {
     let parsedData = await data.json();
     this.setState({
       articles: this.state.articles.concat(parsedData.articles),
+      loading: false
     });
   };
   render() {
     return (
       <div className="container my-3 mt-3">
-        <h2 className="text-center my-3">
+        <h2 className="text-center my-3" style={{margin:"40px 0px",paddingTop:"50px"}}>
           Peigon News- Top {this.capitalizeFirstLetter(this.props.category)}{" "}
           Headlines
         </h2>
+        <div className="container">
         <InfiniteScroll
           dataLength={this.state.articles.length}
           next={this.fetchMoreData}
           hasMore={this.state.totalResults !== this.state.articles.length}
           loader={<Spinner />}
         >
-          <div className="container">
+        <div className="container">
             <div className="row">
               {this.state.loading && <Spinner />}
               {this.state.articles.map((element) => {
@@ -107,7 +109,8 @@ export class News extends Component {
             </div>
           </div>
         </InfiniteScroll>
-
+        </div>
+              {/* for the next and Previous buttons */}
         {/* <div className="conatiner my-3 d-flex justify-content-between">
                 <button disabled={this.state.page <= 1} type="button" className="btn btn-success" onClick={this.handlePrevClick}>	&#8592; Previous</button>
                 <button disabled={this.state.page+1 > Math.ceil(this.state.totalResults/this.props.pageSize)} type="button" className="btn btn-success" onClick={this.handleNextClick}>Next	&#8594;</button>
