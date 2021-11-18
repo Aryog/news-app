@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-
 export class Newsitem extends Component {
   render() {
     let { title, description, ImageUrl, newsUrl, author, date, source } =
