@@ -41,7 +41,8 @@ See the section about [deployment](https://facebook.github.io/create-react-app/d
  ####
  Here's the sample of the top-loading bar and infinite scrolling
  
- ![Screenshot (20)](https://user-images.githubusercontent.com/87793885/142890881-f1052ff8-2d9f-477a-9ccb-a4a929a1d57f.png)
+ ![Screenshot (24)](https://user-images.githubusercontent.com/87793885/142893346-29e10597-e018-4f5e-8eff-be9114968dd6.png)
+
 
 
 **Note: this is a one-way operation. Once you `eject`, you can’t go back!**
